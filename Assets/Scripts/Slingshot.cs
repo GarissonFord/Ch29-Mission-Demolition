@@ -62,6 +62,8 @@ public class Slingshot : MonoBehaviour {
 			aimingMode = false;
 			projectile.GetComponent<Rigidbody> ().isKinematic = false;
 			projectile.GetComponent<Rigidbody> ().velocity = -mouseDelta * velocityMult;
+			//Sets the projectile to be followed by the camera
+			FollowCam.S.poi = projectile;
 			/* Doesn't eliminate the actual game object, just allows another instance 
 			 * to occupy the variable so we can make multiple shots 
 			 */
