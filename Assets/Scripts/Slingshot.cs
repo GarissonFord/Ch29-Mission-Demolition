@@ -61,6 +61,7 @@ public class Slingshot : MonoBehaviour {
 		{
 			aimingMode = false;
 			projectile.GetComponent<Rigidbody> ().isKinematic = false;
+			//Take the reverse magnitude of mouseDelta and multiply it by the velocity
 			projectile.GetComponent<Rigidbody> ().velocity = -mouseDelta * velocityMult;
 			//Sets the projectile to be followed by the camera
 			FollowCam.S.poi = projectile;

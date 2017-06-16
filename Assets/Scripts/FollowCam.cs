@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class FollowCam : MonoBehaviour 
 {
+	//This is a "Singleton," a single intended copy of the object 
 	static public FollowCam S;
 	public float easing = 0.05f;
 	public Vector2 minXY;
