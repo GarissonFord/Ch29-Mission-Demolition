@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Slingshot : MonoBehaviour {
 
+	static public Slingshot S;
+
 	//Set in the Inspector
 	public GameObject prefabProjectile;
 	//So...this is literally just meant to just divide the Inspector and dynamic fields?
@@ -18,6 +20,7 @@ public class Slingshot : MonoBehaviour {
 
 	void Awake()
 	{
+		S = this;
 		Transform launchPointTrans = transform.Find ("LaunchPoint");
 		launchPoint = launchPointTrans.gameObject;
 		launchPoint.SetActive (false);

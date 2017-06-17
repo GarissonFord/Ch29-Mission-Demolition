@@ -24,9 +24,26 @@ public class FollowCam : MonoBehaviour
 
 	void FixedUpdate()
 	{
-		if (poi == null) return;
-
-		Vector3 destination = poi.transform.position;
+		Vector3 destination;
+		if (poi == null) 
+		{
+			destination = Vector3.zero;
+		} 
+		else 
+		{
+			//Gets poi's position
+			destination = poi.transform.position;
+			if (poi.CompareTag ("Projectile")) 
+			{
+				//if it is sleeping
+				if (poi.GetComponent<Rigidbody> ().IsSleeping ()) 
+				{
+					//Set poi to null and return camera to its origin
+					poi = null;
+					return;
+				}
+			}
+		}
 		//Prevents the camera from sinking below the ground
 		destination.x = Mathf.Max (minXY.x, destination.x);
 		destination.y = Mathf.Max (minXY.y, destination.y);
