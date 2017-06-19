@@ -72,6 +72,7 @@ public class Slingshot : MonoBehaviour {
 			 * to occupy the variable so we can make multiple shots 
 			 */
 			projectile = null;
+			MissionDemolition.ShotFired ();
 		}
 	}
 
