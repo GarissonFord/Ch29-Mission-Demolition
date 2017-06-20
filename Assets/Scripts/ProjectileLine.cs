@@ -54,9 +54,9 @@ public class ProjectileLine : MonoBehaviour
 
 	public void AddPoint()
 	{
-		//Adds a point to the line
+		//Gets the poi's current position
 		Vector3 pt = _poi.transform.position;
-		//if the point isn't far enough from the last point
+		//if the pt isn't far enough from the last point
 		if (points.Count > 0 && (pt - lastPoint).magnitude < minDist) 
 		{
 			return;
